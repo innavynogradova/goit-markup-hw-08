@@ -1,0 +1,103 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background: $second-background-color;
+}
+
+.footer__container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-element:first-child {
+  margin-right: 70px;
+}
+
+.footer-element:last-child {
+  margin-left: auto;
+}
+
+.footer-contact {
+  font-style: normal;
+  @include font(14px, null, 24px, null);
+}
+
+.footer-contact__link {
+  transition: color $timing $timing-function;
+  color: rgba(255, 255, 255, 0.6);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.footer-contact__link--address-color {
+  color: $white-color;
+}
+
+.footer-contact__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-join {
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+  @include font(14px, 700, 16px, null);
+
+  color: $white-color;
+}
+
+.footer-join__social-list {
+  @include flexWrap;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+
+.footer-join__social-item {
+  flex-basis: calc(100% / 4 - 10px);
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-join__social-link {
+  transition: color $timing $timing-function, background-color $timing $timing-function;
+
+  @include flexAlign(center);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  color: $white-color;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $accent-color;
+  }
+}
+
+.footer-join__social-icon {
+  fill: currentColor;
+}
+
+.footer-join__signup-wrap {
+  display: flex;
+}
+
+.footer-join__input {
+  margin: 0;
+  padding: 15px 16px;
+  margin-right: 12px;
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  background-color: transparent;
+  color: $second-text-color;
+}

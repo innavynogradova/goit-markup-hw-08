@@ -1,0 +1,85 @@
+.header {
+  @include font(14px, 500, 16px, 0.02em);
+  border-bottom: 1px solid #ececec;
+}
+
+.header__container {
+  @include flexAlign(flex-start);
+}
+
+.nav {
+  @include flexAlign(flex-start);
+}
+
+.nav__list {
+  @include flexAlign(flex-start);
+}
+
+.nav__item {
+  & + & {
+    margin-left: 50px;
+  }
+}
+
+.nav__link {
+  position: relative;
+  transition: color $timing $timing-function;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $nav-text-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &.current::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: background-color $timing $timing-function;
+
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    background-color: $accent-color;
+  }
+}
+
+.header-contact {
+  @include flexAlign(flex-start);
+  margin-left: auto;
+}
+
+.header-contact__item:not(:first-child) {
+  margin-left: 50px;
+}
+
+.header-contact__link {
+  transition: color $timing $timing-function;
+
+  @include flexAlign(flex-start);
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $header-contact-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.header-contact__icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.current {
+  color: $accent-color;
+}

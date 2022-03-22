@@ -1,0 +1,111 @@
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.portfolio__button-list {
+  @include flexAlign(center);
+  margin-bottom: 50px;
+}
+
+.button__portfolio {
+  transition: color $timing $timing-function, background-color $timing $timing-function,
+    box-shadow $timing $timing-function;
+
+  min-width: 73px;
+  padding: 6px 22px;
+
+  font-family: inherit;
+  @include font(16px, 500, 26px, 0.03em);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  border: transparent;
+
+  color: $second-btn-color;
+  background-color: $first-background-color;
+
+  &:hover,
+  &:focus {
+    color: $first-btn-color;
+    background-color: $accent-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+  }
+}
+
+.portfolio__btn-item {
+  & + & {
+    margin-left: 8px;
+  }
+}
+
+.portfolio__list {
+  @include flexWrap;
+  margin-left: -30px;
+  margin-bottom: -30px;
+}
+
+.portfolio__item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.portfolio__link {
+  transition: box-shadow $timing $timing-function;
+
+  display: block;
+
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.portfolio__text {
+  padding: 20px 24px;
+
+  background: $white-color;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
+
+.portfolio__title {
+  margin-bottom: 4px;
+
+  @include font(18px, 700, 36px, 0.06em);
+  color: $first-text-color;
+}
+
+.portfolio__type {
+  @include font(16px, null, 30px, null);
+  color: $second-text-color;
+}
+
+.portfolio__wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__top-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: transform $timing $timing-function;
+  transform: translateY(101%);
+
+  height: 100%;
+  padding: 63px 24px;
+
+  @include font(18px, null, 28px, null);
+  color: $white-color;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  .portfolio__link:hover & {
+    transform: translateY(0);
+  }
+}

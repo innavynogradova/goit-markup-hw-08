@@ -1,0 +1,17 @@
+@mixin font($fz, $fw, $lh, $ls) {
+  font-size: $fz;
+  font-weight: $fw;
+  line-height: ($lh / $fz);
+  letter-spacing: $ls;
+}
+
+@mixin flexAlign($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+}

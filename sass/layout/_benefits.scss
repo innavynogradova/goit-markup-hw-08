@@ -1,0 +1,27 @@
+.benefit__list {
+  @include flexAlign(space-between);
+}
+
+.benefit__item {
+  width: 270px;
+}
+
+.benefit__title {
+  margin-bottom: 10px;
+  @include font(14px, 700, 16px, null);
+  text-transform: uppercase;
+}
+
+.benefit__text {
+  @include font(14px, null, 24px, null);
+  color: $second-text-color;
+}
+
+.benefit__icon-container {
+  height: 120px;
+  margin-bottom: 30px;
+
+  @include flexAlign(center);
+
+  background-color: $first-background-color;
+}

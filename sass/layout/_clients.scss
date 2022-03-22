@@ -1,0 +1,41 @@
+.client__title {
+  @extend %title;
+}
+
+.client__list {
+  @include flexWrap;
+  margin-left: -30px;
+  margin-bottom: -30px;
+}
+
+.client__item {
+  flex-basis: calc(100% / 6 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.client__link {
+  transition: color $timing $timing-function, border $timing $timing-function;
+
+  width: 170px;
+  height: 92px;
+
+  @include flexAlign(center);
+
+  border: 1px solid $main-icon-color;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $main-icon-color;
+  background-color: $white-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border: 1px solid $accent-color;
+  }
+}
+
+.client__icon {
+  fill: currentColor;
+}
