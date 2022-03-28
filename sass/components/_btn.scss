@@ -32,6 +32,8 @@
   @include flexAlign(space-between);
   padding: 10px 28px 10px 29px;
   @extend .button;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button__icon {

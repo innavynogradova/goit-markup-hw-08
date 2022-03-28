@@ -1,11 +1,36 @@
 .portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include media(1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .portfolio__button-list {
-  @include flexAlign(center);
-  margin-bottom: 50px;
+  margin-left: -8px;
+  margin-bottom: 25px;
+
+  @include flexWrap;
+  justify-content: flex-start;
+
+  @include media(768px) {
+    @include flexAlign(center);
+    margin-bottom: 30px;
+  }
+
+  @include media(1200px) {
+    margin-bottom: 50px;
+  }
+}
+
+.portfolio__btn-item {
+  margin-left: 8px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 15px;
+  }
 }
 
 .button__portfolio {
@@ -35,28 +60,38 @@
   }
 }
 
-.portfolio__btn-item {
-  & + & {
-    margin-left: 8px;
+.portfolio__list {
+  @include media(768px) {
+    @include flexWrap;
+    margin-left: -30px;
+    margin-bottom: -30px;
   }
 }
 
-.portfolio__list {
-  @include flexWrap;
-  margin-left: -30px;
-  margin-bottom: -30px;
-}
-
 .portfolio__item {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-left: 30px;
-  margin-bottom: 30px;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @include media(768px) {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  @include media(1200px) {
+    flex-basis: calc(100% / 3 - 30px);
+  }
 }
 
 .portfolio__link {
   transition: box-shadow $timing $timing-function;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   &:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -65,6 +100,8 @@
 }
 
 .portfolio__text {
+  flex-grow: 1;
+
   padding: 20px 24px;
 
   background: $white-color;
